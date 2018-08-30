@@ -1,25 +1,16 @@
 package controllers
 
 import (
-	// "fmt"
 	"net/http"
 	"github.com/gin-gonic/gin"
-	// "gopkg.in/mgo.v2/bson"
-
 
 	"github.com/mavajee/todo/models"
 )
 
 type TodoController struct{}
 
-type IndexSchema struct {
-	// https://github.com/gin-gonic/gin#model-binding-and-validation
-	Completed bool
-}
-
 func (t TodoController) Index(c *gin.Context) {
 	tm := models.CreateTodoManager()
-	// a.CompleteOnly()
 
 	c.JSON(200, tm.All())
 }
